@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Crypto Price Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">₿ Crypto Tracker</h1>
+                <div class="header-controls">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search cryptocurrency...">
+                    <div class="last-updated">
+                        <span class="update-label">Last Updated:</span>
+                        <span id="lastUpdated" class="update-time">--:--:--</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="market-overview">
+                <div class="overview-card">
+                    <h3>Top Gainer</h3>
+                    <div id="topGainer" class="overview-data">
+                        <span class="coin-name">--</span>
+                        <span class="coin-change positive">--</span>
+                    </div>
+                </div>
+                <div class="overview-card">
+                    <h3>Top Loser</h3>
+                    <div id="topLoser" class="overview-data">
+                        <span class="coin-name">--</span>
+                        <span class="coin-change negative">--</span>
+                    </div>
+                </div>
+                <div class="overview-card">
+                    <h3>Total Coins</h3>
+                    <div id="totalCoins" class="overview-data">
+                        <span class="coin-count">--</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="crypto-list-section">
+                <div class="section-header">
+                    <h2>Live Cryptocurrency Prices</h2>
+                    <div class="status-indicator">
+                        <span class="status-dot"></span>
+                        <span>Live</span>
+                    </div>
+                </div>
+                
+                <div id="loadingSpinner" class="loading">Loading cryptocurrency data...</div>
+                <div id="errorMessage" class="error-message"></div>
+                
+                <div class="crypto-table-container">
+                    <table class="crypto-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Coin</th>
+                                <th>Price</th>
+                                <th>24h Change</th>
+                                <th>Market Cap</th>
+                                <th>Volume (24h)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cryptoTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Data provided by <strong>CoinGecko API</strong> | Updates every 30 seconds</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
